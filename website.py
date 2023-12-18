@@ -36,11 +36,12 @@ def upload():
                 upload_file.save(os.path.join(app.config['UPLOAD_PATH'], tempPath, filename))
 
     # 将文件夹内的数据上传到服务器并清空文件夹
-    filenames = os.listdir(os.path.join(app.config['UPLOAD_PATH'], tempPath))
-    for filename in filenames:
-        local_file_path = os.path.join(app.config['UPLOAD_PATH'], tempPath, filename)
-        remote_file_path = "learn/cell/" + tempPath + "/"
-        ssh_scp_put("192.168.175.128", 22, "zz", "xiaozhuzhen", local_file_path, remote_file_path, filename)
+    # filenames = os.listdir(os.path.join(app.config['UPLOAD_PATH'], tempPath))
+    # for filename in filenames:
+    #     local_file_path = os.path.join(app.config['UPLOAD_PATH'], tempPath, filename)
+    #     remote_file_path = "learn/cell/" + tempPath + "/"
+    #     ssh_scp_put("192.168.175.128", 22, "zz", "xiaozhuzhen",
+    #     local_file_path, remote_file_path, filename)
 
         # os.remove(os.path.join(app.config['UPLOAD_PATH'], tempPath, filename))
 

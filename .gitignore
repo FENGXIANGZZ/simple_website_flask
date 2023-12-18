@@ -45,3 +45,5 @@ static/
 .idea/
 
 website/
+
+__pycache__/
