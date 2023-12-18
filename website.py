@@ -42,15 +42,15 @@ def upload():
         remote_file_path = "learn/cell/" + tempPath + "/"
         ssh_scp_put("192.168.175.128", 22, "zz", "xiaozhuzhen", local_file_path, remote_file_path, filename)
 
-        os.remove(os.path.join(app.config['UPLOAD_PATH'], tempPath, filename))
+        # os.remove(os.path.join(app.config['UPLOAD_PATH'], tempPath, filename))
 
     # 删除这个空文件夹
-    os.rmdir(os.path.join(app.config['UPLOAD_PATH'], tempPath))
+    # os.rmdir(os.path.join(app.config['UPLOAD_PATH'], tempPath))
 
     # 从服务器上下载数据
-    local_dir_name = os.path.join("./downloads/" + tempPath)
-    check_file_path(local_dir_name)
-    down_from_remote(remote_dir_name=remote_file_path, local_dir_name=local_dir_name)
+    # local_dir_name = os.path.join("./downloads/" + tempPath)
+    # check_file_path(local_dir_name)
+    # down_from_remote(remote_dir_name=remote_file_path, local_dir_name=local_dir_name)
 
     return redirect(url_for("upload"))
 
